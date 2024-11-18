@@ -14,21 +14,41 @@ public class PreferredCustomer extends Customer{
         this.discountLevel = discountLevel;
     }
 
-    public void setLoyaltyPoints(){
-        this.loyaltyPoints = loyaltyPoints;
+    public void addLoyaltyPoints(int points) {
+        if (points > 0) {
+            this.loyaltyPoints += points;
+            setDiscountLevel();
+        } else {
+            System.out.println("Points to add must be positive.");
+        }
     }
 
-    public int addLoyaltyPoints(int loyaltyPoints){
-        return loyaltyPoints;
+
+    public void setDiscountLevel() {
+        if(this.loyaltyPoints >= 2000){
+            this.discountLevel = 10;
+        }
+        else if(this.loyaltyPoints >= 1500){
+            this.discountLevel = 7;
+        }
+        else if(this.loyaltyPoints >= 1000){
+            this.discountLevel = 6;
+        }
+        else if(this.loyaltyPoints >= 500){
+            this.discountLevel = 5;
+        }
+        else{
+            this.discountLevel = 0;
+        }
     }
 
-    public void setDiscountLevel(){
-        this.discountLevel = discountLevel;
+
+    @Override
+    public String toString() {
+        return super.toString() + ", loyaltyPoints=" + loyaltyPoints +
+                ", discountLevel=" + discountLevel;
     }
 
-    public int addDiscountLevel(int discountLevel){
-        return discountLevel;
-    }
 
 }
 
