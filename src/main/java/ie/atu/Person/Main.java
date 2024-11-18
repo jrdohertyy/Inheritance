@@ -22,7 +22,7 @@ public class Main {
         preferredCustomer.setName("Paul");
         preferredCustomer.setAddress("ATU");
         preferredCustomer.setPhone("091 775678");
-        preferredCustomer.setCustNumber("1002");
+        preferredCustomer.setCustNumber("100");
         preferredCustomer.setMailingList(false);
         preferredCustomer.addLoyaltyPoints(700); // Accumulate points
         System.out.println(preferredCustomer);
